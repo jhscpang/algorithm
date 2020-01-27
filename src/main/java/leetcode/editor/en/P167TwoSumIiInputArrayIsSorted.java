@@ -33,7 +33,7 @@ public class P167TwoSumIiInputArrayIsSorted {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] twoSum(int[] numbers, int target) {
-            // 思路：有序数组使用双指针，代替HashMap
+            // 思路：有序数组使用双指针，代替HashMap，原理是从两侧分别向内收敛，直到结束
             int[] result = new int[2];
             if (numbers == null || numbers.length == 0) {
                 return result;
