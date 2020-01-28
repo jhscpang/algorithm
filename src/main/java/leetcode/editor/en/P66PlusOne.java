@@ -23,7 +23,6 @@
 //Explanation: The array represents the integer 4321.
 // Related Topics Array
 
-
 package leetcode.editor.en;
 
 //Java：Plus One
@@ -49,26 +48,29 @@ public class P66PlusOne {
         System.out.println(s);
         return s;
     }
-    
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] plusOne(int[] digits) {
-        int length = digits.length;
-        for (int i = length - 1; i >= 0; i--) {
-            // 不产生进位情况，直接返回
-            if (digits[i] < 9) {
-                digits[i] ++;
-                return digits;
+    class Solution {
+        public int[] plusOne(int[] digits) {
+            /**
+             * 思路：遇到9则进位，否则不进位，如果最高位进位后是0，应该再升一位
+             */
+            int length = digits.length;
+            for (int i = length - 1; i >= 0; i--) {
+                // 不产生进位情况，直接返回
+                if (digits[i] < 9) {
+                    digits[i]++;
+                    return digits;
+                }
+                // 产生了进位
+                digits[i] = 0;
             }
-            // 产生了进位
-            digits[i] = 0;
+            // 为进位多出了一位数进行处理， 走到这里一定是因为产生了进位一位数
+            int[] newDigits = new int[length + 1];
+            newDigits[0] = 1;
+            return newDigits;
         }
-        // 为进位多出了一位数进行处理， 走到这里一定是因为产生了进位一位数
-        int[] newDigits = new int[length + 1];
-        newDigits[0] = 1;
-        return newDigits;
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

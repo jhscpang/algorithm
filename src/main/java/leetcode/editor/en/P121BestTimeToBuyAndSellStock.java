@@ -42,6 +42,9 @@ public class P121BestTimeToBuyAndSellStock {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxProfit(int[] prices) {
+            /**
+             * 思路：分别记录最低谷和最大利润
+             */
             if (prices == null || prices.length == 0) {
                 return 0;
             }

@@ -40,7 +40,6 @@
 //Explanation: In this case, no transaction is done, i.e. max profit = 0. 
 // Related Topics Array Greedy
 
-
 package leetcode.editor.en;
 
 //Java：Best Time to Buy and Sell Stock II
@@ -50,24 +49,26 @@ public class P122BestTimeToBuyAndSellStockIi {
         Solution solution = new P122BestTimeToBuyAndSellStockIi().new Solution();
         // TO TEST
     }
-    
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maxProfit(int[] prices) {
-        // 思路：只要后面的值比前面的大，就是可以买入卖出赚钱的点
-        if (prices == null || prices.length == 0) {
-            return 0;
-        }
-        int length = prices.length;
-        int maxProfit = 0;
-        for (int i = 1; i < length; i++) {
-            if (prices[i] > prices[i - 1]) {
-                maxProfit += prices[i] - prices[i - 1];
+    class Solution {
+        public int maxProfit(int[] prices) {
+            /**
+             * 思路：只要后面的值比前面的大，就是可以买入卖出赚钱的点
+             */
+            if (prices == null || prices.length == 0) {
+                return 0;
             }
+            int length = prices.length;
+            int maxProfit = 0;
+            for (int i = 1; i < length; i++) {
+                if (prices[i] > prices[i - 1]) {
+                    maxProfit += prices[i] - prices[i - 1];
+                }
+            }
+            return maxProfit;
         }
-        return maxProfit;
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

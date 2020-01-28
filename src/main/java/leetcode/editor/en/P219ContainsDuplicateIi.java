@@ -34,9 +34,7 @@ package leetcode.editor.en;
 
 //Java：Contains Duplicate II
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class P219ContainsDuplicateIi {
@@ -49,20 +47,20 @@ public class P219ContainsDuplicateIi {
     class Solution {
         public boolean containsNearbyDuplicate(int[] nums, int k) {
             /**
-             * 1. 使用HashMap判断是否存在重复元素，并且距离是否在k范围内
+             * 方法1. 使用HashMap判断是否存在重复元素，并且距离是否在k范围内
              */
-//            Map<Integer, Integer> map = new HashMap<>();
-//            for (int i = 0; i < nums.length; i++) {
-//                if (map.containsKey(nums[i]) && i - map.get(nums[i]) <= k) {
-//                    return true;
-//                } else {
-//                    map.put(nums[i], i);
-//                }
-//            }
-//            return false;
+            //            Map<Integer, Integer> map = new HashMap<>();
+            //            for (int i = 0; i < nums.length; i++) {
+            //                if (map.containsKey(nums[i]) && i - map.get(nums[i]) <= k) {
+            //                    return true;
+            //                } else {
+            //                    map.put(nums[i], i);
+            //                }
+            //            }
+            //            return false;
 
             /**
-             * 2. 使用大小为K的HashSet，判断这个k大小的窗口内是否存在重复元素
+             * 方法2. 使用大小为K的HashSet，判断这个k大小的窗口内是否存在重复元素
              */
             Set<Integer> set = new HashSet<>();
             for (int i = 0; i < nums.length; i++) {

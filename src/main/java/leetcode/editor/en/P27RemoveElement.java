@@ -50,7 +50,6 @@
 //    print(nums[i]);
 //} Related Topics Array Two Pointers
 
-
 package leetcode.editor.en;
 
 //Java：Remove Element
@@ -60,24 +59,26 @@ public class P27RemoveElement {
         Solution solution = new P27RemoveElement().new Solution();
         // TO TEST
     }
-    
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        if(nums == null || nums.length == 0) {
-            return 0;
-        }
-        // 使用双指针
-        int low = 0;
-        for (int fast = 0; fast < nums.length; fast++) {
-            if (nums[fast] != val) {
-                nums[low] = nums[fast];
-                low++;
+    class Solution {
+        public int removeElement(int[] nums, int val) {
+            /**
+             * 思路：使用快慢指针，快指针用于遍历，慢指针用于记录移动后元素该存储的位置
+             */
+            if (nums == null || nums.length == 0) {
+                return 0;
             }
+            int low = 0;
+            for (int fast = 0; fast < nums.length; fast++) {
+                if (nums[fast] != val) {
+                    nums[low] = nums[fast];
+                    low++;
+                }
+            }
+            return low;
         }
-        return low;
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -38,8 +38,9 @@ public class P217ContainsDuplicate {
     class Solution {
         public boolean containsDuplicate(int[] nums) {
             /**
-             * 1. 将数组排序，然后比较相邻元素是否相同
-             * 2. 使用HashMap
+             * 思路：
+             * 方法1. 将数组排序，然后比较相邻元素是否相同
+             * 方法2. 使用HashMap
              */
             int n = nums.length;
             HashMap<Integer, Integer> map = new HashMap();

@@ -45,7 +45,6 @@
 //    print(nums[i]);
 //} Related Topics Array Two Pointers
 
-
 package leetcode.editor.en;
 
 //Java：Remove Duplicates from Sorted Array
@@ -55,23 +54,25 @@ public class P26RemoveDuplicatesFromSortedArray {
         Solution solution = new P26RemoveDuplicatesFromSortedArray().new Solution();
         // TO TEST
     }
-    
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeDuplicates(int[] nums) {
-        if(nums.length <= 1) {
-            return nums.length;
-        }
-        // 使用双指针
-        int index = 0;// 记录新数组的最后一个元素的角标
-        for(int i = 1; i < nums.length; i ++) {
-            if(nums[i] != nums[index]) {
-                nums[++ index] = nums[i];
+    class Solution {
+        public int removeDuplicates(int[] nums) {
+            /**
+             * 思路：使用快慢指针，快指针用于遍历，慢指针用于记录移动后元素该存储的位置
+             */
+            if (nums.length <= 1) {
+                return nums.length;
             }
+            int index = 0;// 记录新数组的最后一个元素的角标
+            for (int i = 1; i < nums.length; i++) {
+                if (nums[i] != nums[index]) {
+                    nums[++index] = nums[i];
+                }
+            }
+            return index + 1;
         }
-        return index + 1;
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }
