@@ -22,8 +22,6 @@ package leetcode.editor.en;
 
 //Java：Majority Element
 
-import java.util.Arrays;
-
 public class P169MajorityElement {
     public static void main(String[] args) {
         Solution solution = new P169MajorityElement().new Solution();
