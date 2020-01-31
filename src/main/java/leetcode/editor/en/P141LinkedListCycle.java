@@ -97,8 +97,8 @@ public class P141LinkedListCycle {
             if (head == null || head.next == null) { // null或者单个节点时一定没环
                 return false;
             }
-            ListNode slow = head;
-            ListNode fast = head.next;
+            ListNode slow = head.next;
+            ListNode fast = head.next.next;
             while (slow != null && fast != null) {
                 if (slow == fast) { // 快慢指针相遇。说明有环
                     return true;
