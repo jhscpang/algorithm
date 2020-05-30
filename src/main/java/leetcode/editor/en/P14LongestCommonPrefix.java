@@ -37,42 +37,23 @@ public class P14LongestCommonPrefix {
     class Solution {
         public String longestCommonPrefix(String[] strs) {
             /**
-             * 思路：此题有很多在解法，有水平对比，垂直对比等
-             * 但是我觉得这个二分法用的比较好，下面记录这个机遇二分法的解法
+             * 思路：此题有很多在解法，有水平对比，垂直对比，二分法等
+             * 下面记录最好理解的垂直查找法
              */
             if (strs == null || strs.length == 0) {
                 return "";
             }
-
-            int minLen = Integer.MAX_VALUE;
-            // 所有字符串中取最短的长度，在这个最短的长度中用二分法
-            for (String str : strs) {
-                minLen = Math.min(minLen, str.length());
-            }
-            int low = 1; // substring是左闭右开，因此这里从1而不是0开始
-            int high = minLen;
-            //
-            while (low <= high) {
-                int middle = (low + (high - low) / 2);
-                if (isCommonPrefix(strs, middle)) {
-                    low = middle + 1;
-                } else {
-                    high = middle - 1;
+            for (int i = 0; i < strs[0].length(); i++) {
+                char c = strs[0].charAt(i);
+                for (int j = 1; j < strs.length; j++) {
+                    if (i == strs[j].length() || strs[j].charAt(i) != c) {
+                        return strs[0].substring(0, i);
+                    }
                 }
             }
-            return strs[0].substring(0, (high + low) / 2);
+            return strs[0];
         }
+        //leetcode submit region end(Prohibit modification and deletion)
 
-        private boolean isCommonPrefix(String[] strs, int len) {
-            String str1 = strs[0].substring(0, len);
-            for (int i = 1; i < strs.length; i++) {
-                if (!strs[i].startsWith(str1)) {
-                    return false;
-                }
-            }
-            return true;
-        }
     }
-    //leetcode submit region end(Prohibit modification and deletion)
-
 }

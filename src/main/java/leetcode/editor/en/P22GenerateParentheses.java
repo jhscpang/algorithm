@@ -35,7 +35,7 @@ public class P22GenerateParentheses {
 
         public List<String> generateParenthesis(int n) {
             /**
-             * 此题也是也是一种排列组合，但是如P17的一种区别是，P17题可以传递index，然后使用标准的回溯模板即可
+             * 思路：此题也是一种排列组合，但是如P17的一种区别是，P17题可以传递index，然后使用标准的回溯模板即可
              * 本题不能传递index，更贴切的应该算是一种递归，回溯只是递归中特殊的一种
              */
             if (n == 0) {
